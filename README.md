@@ -27,6 +27,15 @@ cd /tmp
 git clone https://github.com/exrat/rutorrent-bonobox
 cd rutorrent-bonobox
 chmod a+x bonobox.sh && ./bonobox.sh
+rm -r /var/www/rutorrent/plugins/lbll-suite/
+wget http://nginx.org/download/nginx-1.20.2.tar.gz
+git clone https://github.com/aperezdc/ngx-fancyindex.git
+apt install libpcre3 libpcre3-dev
+tar -xvf nginx-1.20.2.tar.gz
+./configure --with-compat --add-dynamic-module=../ngx-fancyindex
+make modules
+mkdir /usr/share/nginx/modules/
+cp objs/ngx_http_fancyindex_module.so /usr/share/nginx/modules/
 ```
 ![caps1](https://raw.github.com/exrat/rutorrent-bonobox/master/files/caps_script01.png)
 
