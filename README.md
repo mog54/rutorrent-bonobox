@@ -32,6 +32,7 @@ wget http://nginx.org/download/nginx-1.22.0.tar.gz
 git clone https://github.com/aperezdc/ngx-fancyindex.git
 apt install -y libpcre3 libpcre3-dev
 tar -xvf nginx-1.22.0.tar.gz
+cd nginx-1.22.0/
 ./configure --with-compat --add-dynamic-module=../ngx-fancyindex
 make modules
 mkdir /usr/share/nginx/modules/
